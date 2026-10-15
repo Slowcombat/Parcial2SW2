@@ -1,0 +1,125 @@
+/* Estilos de la interfaz de Gestión de Inmuebles */
+.root {
+    -fx-font-family: "System";
+    -fx-font-size: 13px;
+    -color-primario: #1d5c63;
+    -color-primario-oscuro: #144349;
+    -color-peligro: #b3261e;
+    -color-fondo: #f2f4f3;
+    -color-borde: #d9dedd;
+    -color-texto-suave: #5b6664;
+}
+
+.raiz {
+    -fx-background-color: -color-fondo;
+}
+
+.encabezado {
+    -fx-background-color: -color-primario;
+    -fx-padding: 14 20 14 20;
+}
+
+.titulo {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo {
+    -fx-text-fill: #cfe3e1;
+}
+
+.tarjeta {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: -color-borde;
+    -fx-border-radius: 8;
+    -fx-padding: 16;
+}
+
+/* -fx-background debe ser un color claro: JavaFX calcula con él el color del texto */
+.panel-scroll {
+    -fx-background: -color-fondo;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.panel-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.seccion {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-primario-oscuro;
+    -fx-padding: 6 0 0 0;
+}
+
+.sotano {
+    -fx-background-color: #f6f8f8;
+    -fx-background-radius: 6;
+    -fx-padding: 8;
+}
+
+.modo {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 10;
+}
+
+.modo-nuevo {
+    -fx-background-color: #e3f1ef;
+    -fx-text-fill: -color-primario-oscuro;
+}
+
+.modo-edicion {
+    -fx-background-color: #fff1d6;
+    -fx-text-fill: #7a4b00;
+}
+
+.button {
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.button.primario {
+    -fx-background-color: -color-primario;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button.primario:hover {
+    -fx-background-color: -color-primario-oscuro;
+}
+
+.button.peligro {
+    -fx-background-color: -color-peligro;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.mensaje.exito {
+    -fx-text-fill: #1e6b2f;
+}
+
+.mensaje.error {
+    -fx-text-fill: -color-peligro;
+}
+
+.resumen {
+    -fx-text-fill: -color-texto-suave;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -color-primario;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}

@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+.settings/
+.project
+.classpath
+.factorypath
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

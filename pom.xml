@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>co.edu.poli</groupId>
+    <artifactId>gestion-inmuebles-hexagonal</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Gestión de Inmuebles - Arquitectura Hexagonal</name>
+    <description>CRUD de inmuebles con JavaFX, MySQL y arquitectura hexagonal (puertos y adaptadores).</description>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>21.0.5</javafx.version>
+        <mysql.version>9.1.0</mysql.version>
+        <junit.version>5.11.3</junit.version>
+        <main.class>co.edu.poli.inmuebles.Launcher</main.class>
+    </properties>
+
+    <dependencies>
+        <!-- Interfaz gráfica -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!-- Driver JDBC de MySQL -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!-- Pruebas -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+            </plugin>
+
+            <!-- mvn javafx:run -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- mvn javadoc:javadoc  -> target/reports/apidocs/index.html -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.11.2</version>
+                <configuration>
+                    <show>protected</show>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <locale>es_CO</locale>
+                    <doctitle>Gestión de Inmuebles - API</doctitle>
+                    <windowtitle>Gestión de Inmuebles - API</windowtitle>
+                    <groups>
+                        <group>
+                            <title>Dominio</title>
+                            <packages>co.edu.poli.inmuebles.domain*</packages>
+                        </group>
+                        <group>
+                            <title>Aplicación (casos de uso y puertos)</title>
+                            <packages>co.edu.poli.inmuebles.application*</packages>
+                        </group>
+                        <group>
+                            <title>Infraestructura (adaptadores)</title>
+                            <packages>co.edu.poli.inmuebles.infrastructure*</packages>
+                        </group>
+                    </groups>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
